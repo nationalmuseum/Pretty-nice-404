@@ -45,6 +45,7 @@ Thumbs.db
 node_modules/
 *.lock
 *-lock.json
+.vscode/
 
 # Bower packages #
 ######################
