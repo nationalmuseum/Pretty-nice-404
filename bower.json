@@ -1,0 +1,14 @@
+{
+  	"name": "grunt-html5-boilerplate",
+  	"description": "Minimalistic HTML5 boilerplate with Grunt support",
+	"main": "index.js",
+	"authors": ["Konrad Fedorczyk"],
+	"license": "MIT",
+	"homepage": "http://realhe.ro",
+	"private": true,
+	"ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
+	"dependencies": {
+   	 	"jquery": "^2.2.4",
+   	 	"interactive_bg": "git://github.com/fedek6/interactive_bg.git"
+	}
+}

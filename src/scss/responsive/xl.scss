@@ -1,0 +1,27 @@
+#rh-full-cover > .ibg-bg {
+  background-image: url( "../img/xl/bg.jpg");  
+}
+
+#rh-content {
+  width: 800px;
+}
+#rh-content div.logo {
+  width: 34%;
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 0 32px 0 0;
+}
+#rh-content section.cycle {
+  width: 66%;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 0px;
+}
+#rh-content section.cycle > div {
+  padding: 16px 0 0 16px;
+  text-align: left;
+}
+

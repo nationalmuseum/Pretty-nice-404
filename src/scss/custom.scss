@@ -1,0 +1,184 @@
+/**
+ *   Fonts
+ */
+html, body {
+  overflow:hidden;
+}
+
+html {
+  min-height: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Suisse', sans-serif;
+  font-weight: 400;
+  background-color: Black;
+}
+
+/**
+ *   Cover
+ */
+#rh-full-cover {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/**
+ *   CSS preloader (fadeIn)
+ */
+body.loaded #rh-full-cover {
+  opacity: 1;
+  animation: fadeIn 2s ease-out 1 0s;
+}
+
+#rh-full-cover > .ibg-bg {
+  background-image: url( "../img/xs/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;  
+  background-size: cover;
+}
+
+.wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  
+  background-color: rgba(255, 255, 255, 0.4);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}
+
+/**
+ *   Content style
+ */
+#rh-content {
+  text-align: center;
+  color: Black; 
+  width: 100%;
+  
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto; 
+}
+
+#rh-content div.logo {
+  width: 100%;
+  vertical-align: middle;
+  margin-bottom: 16px;
+}
+#rh-content div.logo a {
+  display: inline-block;
+  // vertical-align: middle;
+}
+#rh-content div.logo img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;  
+}
+
+#rh-content section.cycle {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 128px;
+  vertical-align: middle;
+  padding-top: 16px;
+}
+#rh-content section.cycle > div {
+  display: block;
+  width: 100%;
+}
+
+#rh-content h1 {
+  font-weight: 700;
+  margin: 0 0;
+  padding: 0 0;
+  font-size: 2rem;
+}
+#rh-content p {
+  margin: 1rem 0 0 0;
+}
+/**
+ *   Cycle animation
+ */
+.cycle > div {
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 16px;
+  box-sizing: border-box;
+  animation: rotateWord 12s linear infinite;
+}
+
+// slides timing
+.cycle > div:nth-child(1) { 
+  animation-delay: 0s; 
+}
+.cycle > div:nth-child(2) { 
+  animation-delay: 3s; 
+}
+.cycle > div:nth-child(3) { 
+  animation-delay: 6s; 
+}
+.cycle > div:nth-child(4) { 
+  animation-delay: 9s; 
+}
+
+@keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
+  5% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px);}
+    17% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px); }
+  20% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+  80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/**
+ *   Responsive media queries
+ */
+// >=568px sm
+@media screen and (min-width: 35.5em) { 
+  @import "responsive/sm.scss";
+}
+// >=768px md
+@media screen and (min-width: 48em) {
+  @import "responsive/md.scss";
+}
+// >=1024px lg
+@media screen and (min-width: 64em) {
+  @import "responsive/lg.scss";
+}
+// >=1280px xl
+@media screen and (min-width: 80em) {
+  @import "responsive/xl.scss";
+}
+// >=1920px hd
+@media screen and (min-width: 120em) {
+  @import "responsive/hd.scss";
+}
+
+/* Portrait phones */
+@media screen and (orientation: portrait) {
+  #rh-full-cover > .ibg-bg {
+    background-image: url( "../img/xl/bg.jpg");  
+  }
+}
