@@ -14,6 +14,10 @@ bower update
 
 Edit files in *src* directory (scss and index.html). Replace bg and logo file. After that run grunt in root directory. Check *maintenanance* dir for generated template with all files.
 
+Also please remember to adjust replacement settings in *Gruntfile.js* and *custom.scss*. __If you won't do that you'll get incorrect path to assets.__
+
+After that simply run:
+
 ```
 grunt
 ```

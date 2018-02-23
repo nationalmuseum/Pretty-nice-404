@@ -121,7 +121,27 @@ module.exports = function(grunt) {
 					'maintenance/index.html': 'src/index.html'
 				}
 			}
-		}				 
+		},
+		
+	// Replace template vars 
+  replace: {
+		options: {
+			patterns: [
+				{
+					match: '{assetsUrl}',
+					/**
+					 * Warning! Adjust this for your needs.
+					 */
+					replacement: '//files.mnw.art.pl/errors',
+				}
+			]
+		},
+		dist: {
+			files: [
+					{ expand: true, flatten: true, src: ['maintenance/index.html'], dest: 'maintenance/' }
+				]
+			},
+		},
 	});
 	
 	grunt.loadNpmTasks('grunt-contrib-sass');
@@ -131,6 +151,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-responsive-images');
 	grunt.loadNpmTasks('grunt-minify-html');
-	
-	grunt.registerTask('default', ['sass', 'postcss', 'copy', 'concat', 'uglify', 'responsive_images', 'minifyHtml']);
+	grunt.loadNpmTasks('grunt-replace');
+
+	grunt.registerTask('default', ['sass', 'postcss', 'copy', 'concat', 'uglify', 'responsive_images', 'minifyHtml', 'replace']);
 }; 
